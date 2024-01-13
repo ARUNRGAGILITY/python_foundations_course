@@ -58,5 +58,24 @@ There are various ways to use this function, each serving different purposes or 
    p = Point(1, 2)
    print(p)
    ```
+9. **Printing Multiline Strings**: Printing multiline strings
+In Python, you can use triple quotes (`"""` or `'''`) to print multi-line strings. This is particularly useful when you want to print a string that spans several lines without inserting newline characters (`\n`) manually. Here's an example:
 
+```python
+multi_line_string = """This is a multi-line string.
+It spans multiple lines.
+This is the third line."""
+
+print(multi_line_string)
+```
+
+When you run this code, it will print:
+
+```
+This is a multi-line string.
+It spans multiple lines.
+This is the third line.
+```
+
+Each new line in the string is automatically translated to a newline in the output. This method is very handy for printing long texts, formatted messages, or even small pieces of formatted data.
 Each of these methods serves different use-cases, from simple printing to more complex output formatting. You can choose the one that best suits your needs in different situations.
