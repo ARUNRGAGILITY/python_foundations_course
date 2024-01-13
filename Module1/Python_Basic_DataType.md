@@ -1,5 +1,6 @@
 # Python Basic Data Types
-Python has several built-in basic data types. Here's a detailed explanation of each:
+Python has several built-in basic data types.
+They are integer, float, boolean, string, complex numbers. Here's a detailed explanation of each:
 
 1. **Integer (`int`)**:
    - Represents whole numbers without a fractional component.
