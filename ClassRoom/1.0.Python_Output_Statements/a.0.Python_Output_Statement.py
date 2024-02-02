@@ -87,6 +87,25 @@ print("Total fruits:", number_of_apples + number_of_oranges + number_of_mangoes)
 # Printing with a mix of strings and numbers
 print(name, "is", age, "years old and", height, "feet tall.")
 
+# Printing float numbers
+# Example: Rounding off decimal numbers
+
+# Define a float number
+float_number = 3.14159265
+
+# Round to 2 decimal places
+rounded_two = round(float_number, 2)
+print("Rounded to 2 decimal places:", rounded_two)
+
+# Round to 4 decimal places
+rounded_four = round(float_number, 4)
+print("Rounded to 4 decimal places:", rounded_four)
+
+# Round to no decimal places (integer)
+rounded_no_decimal = round(float_number)
+print("Rounded to no decimal places:", rounded_no_decimal)
+
+
 # Note: In these print statements, Python automatically adds a space between items when using a comma.
 
 '''
@@ -138,6 +157,25 @@ print("\u2764")
 
 # Note: When you run this code, you'll see the effect of each escape sequence in the output.
 
+# Printing Date and time
+'''
+Printing Date and Time
+'''
+from datetime import datetime
+
+# Get the current date and time
+current_datetime = datetime.now()
+
+# Print the current date and time
+print("Current Date and Time:", current_datetime)
+
+# Print individual components (year, month, day, hour, minute, second)
+print("Year:", current_datetime.year)
+print("Month:", current_datetime.month)
+print("Day:", current_datetime.day)
+print("Hour:", current_datetime.hour)
+print("Minute:", current_datetime.minute)
+print("Second:", current_datetime.second)
 
 
 
