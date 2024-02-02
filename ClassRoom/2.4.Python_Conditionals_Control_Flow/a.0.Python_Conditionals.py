@@ -32,6 +32,8 @@ if condition1:
 else:
     # Code to execute when condition1 is False
 
+
+## -- Match case -- ##
 '''
 
 # Simple if
