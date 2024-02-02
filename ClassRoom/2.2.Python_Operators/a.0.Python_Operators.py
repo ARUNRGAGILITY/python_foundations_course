@@ -3,11 +3,12 @@
 '''
 Arithmetic operators: +, -, /, *, **, //, %
 Comparison/Relational operators: >, <, >=, <=, ==, !=
-Assignment Operators:
-Identity Operators:
-Membership Operators:
-Bitwise Operators:
-Walrus Operator:
+Logical Operators: and, or, not
+Assignment Operators: =, and shortcut operator for all +, -, /, *, **, //, %
+Identity Operators: is
+Membership Operators: in, not in
+Bitwise Operators: <<, >>, |, ^, &, ~
+Walrus Operator: :=
 '''
 #--------------------------------------------------------#
 # Arithmetic Operators

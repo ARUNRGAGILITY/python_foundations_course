@@ -11,11 +11,13 @@ print("Hello, World!")
 
 # Docstring accessed with funtion_name.__doc__
 def greet(name):
-    """This function greets the person passed in as a parameter"""
+    """Greet function Documentation: This function greets the person passed in as a parameter"""
     print("Hello, " + name)
+
+print(greet.__doc__)
 # Function with Doc String example
 def my_function():
-    """This is a docstring for the my_function."""
+    """This is a docstring for the my_function testing."""
     pass
 
 print(my_function.__doc__)

@@ -54,7 +54,7 @@ print("and this continues on the same line")
 
 # Writing a list to a file with join
 fruits = ["Apple", "Banana", "Cherry"]
-with open("fruits.txt", "w") as file:
+with open("D:\\example\\python_foundations_course\\ClassRoom\\fruits1.txt", "w") as file:
     file.write(", ".join(fruits))
 
 # Note: The file outputs will not be visible on the console.
