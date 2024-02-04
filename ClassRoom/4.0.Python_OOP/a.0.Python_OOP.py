@@ -306,3 +306,85 @@ print(account.withdraw(200)) # Withdrawal successful. Remaining balance: 1300
 
 # Accessing private attribute through a public method
 print(account.get_balance())  # Outputs 1300
+
+
+## Encapsulation: Example (another Example for Private, Public, Protected)
+## With Access Modifiers
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand  # Public Attribute
+        self._model = model  # Protected Attribute
+        self.__year = 2022   # Private Attribute
+
+    def display_info(self):  # Public Method
+        return f"Brand: {self.brand}, Model: {self._model}, Year: {self.__year}"
+
+    def _protected_method(self):  # Protected Method
+        return "This is a protected method"
+
+    def __private_method(self):  # Private Method
+        return "This is a private method"
+
+# Create an instance of Car
+car = Car("Toyota", "Camry")
+
+# Accessing public member
+print(car.brand)  # Accessible
+
+# Accessing protected member
+print(car._model)  # Accessible, but should be avoided outside the class
+
+# Accessing private member
+# print(car.__year)  # Will raise an AttributeError
+
+# Accessing the public method
+print(car.display_info())
+
+# Accessing protected method
+# print(car._protected_method())  # Accessible, but should be avoided outside the class
+
+# Accessing private method
+# print(car.__private_method())  # Will raise an AttributeError
+
+'''
+Protected Members _protected
+Protected members are intended for use within the class and its subclasses.
+They are indicated by a single underscore _ prefix.
+Python does not enforce access restrictions to these members, but it's a convention to indicate that they should not be used outside of the class and its subclasses unless necessary.
+They are useful when you want to allow subclasses to modify or use these members.
+
+Private Members __private
+Private members are intended for use only within their own class.
+They are indicated by a double underscore __ prefix.
+Python performs name mangling on these members. This means that Python changes the name of the member in a way that makes it harder (but not impossible) to access from outside the class.
+They are used to prevent accidental modification of data and enforce encapsulation.
+'''
+class Vehicle:
+    def __init__(self):
+        self._protected_member = "I am protected"  # Protected member
+        self.__private_member = "I am private"     # Private member
+
+    def access_private_member(self):
+        return self.__private_member  # Accessing the private member inside the class
+
+class Car(Vehicle):
+    def __init__(self):
+        super().__init__()
+        self._protected_member = "Modified by a subclass"  # Modifying the protected member
+
+# Creating instances
+vehicle = Vehicle()
+car = Car()
+
+# Accessing protected member
+print(vehicle._protected_member)  # "I am protected"
+print(car._protected_member)      # "Modified by a subclass"
+
+# Accessing private member
+# print(vehicle.__private_member)  # Will raise an AttributeError
+
+# Accessing private member through a method
+print(vehicle.access_private_member())  # "I am private"
+
+# Accessing the mangled name of the private member
+print(vehicle._Vehicle__private_member)  # "I am private"
