@@ -20,6 +20,7 @@ rounded_num = round(float_num, 2)
 print("Rounded Number:", rounded_num)
 
 # Ceiling and Floor
+print("Round of 2.5, ", round(2.5), "Round of 3.5: ", round(3.5))
 float_num = 2.56
 ceil_val = math.ceil(float_num)
 floor_val = math.floor(float_num)

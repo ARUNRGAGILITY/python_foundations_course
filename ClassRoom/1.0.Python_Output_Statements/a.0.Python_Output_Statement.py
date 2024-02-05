@@ -22,10 +22,20 @@ line2
 line3
 I love Python Programming
 """
+
+another_multi_line_text = '''
+This is a multi-line text
+having
+line1
+line2
+line3
+I love Python Programming
+'''
+
 print(single_line_text)
 print(multi_line_text)
 # Basic print to console
-print("Hello, World!")
+print("Hello, World!\n")
 
 # Formatted print using .format()
 name = "Anjali"
@@ -35,7 +45,7 @@ print("Hello, {}!".format(name))
 age = 30
 print(f"{name} is {age} years old")
 
-# Printing multiple items
+# Printing multiple items: multiple data-types
 print("Name:", name, "- Age:", age)
 
 # Writing to a file
@@ -54,7 +64,7 @@ print("and this continues on the same line")
 
 # Writing a list to a file with join
 fruits = ["Apple", "Banana", "Cherry"]
-with open("D:\\example\\python_foundations_course\\ClassRoom\\fruits1.txt", "w") as file:
+with open("fruits1.txt", "w") as file:
     file.write(", ".join(fruits))
 
 # Note: The file outputs will not be visible on the console.
