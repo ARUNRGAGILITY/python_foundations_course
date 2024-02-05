@@ -66,6 +66,9 @@ class EncapsulatedVehicle(Vehicle):
         # This is how encapsulation allows for controlled access to the class's internal state.
         return f"The secret code of {self.name} is {self.__secret_code}"
 
+    def move(self):
+        # The 'move' method here overrides the method from both parent classes.
+        return f"{self.name} can move EC"
 # Creating objects to demonstrate polymorphism and encapsulation
 car = Car("Car")
 airplane = Airplane("Airplane")
