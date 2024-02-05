@@ -27,6 +27,10 @@ values = list(my_dict.values())
 # Iterating Through a Dictionary
 for key in my_dict:
     print(key, my_dict[key])
+    
+# Iterating through a dictionary via .items()
+for key, value in my_dict.items():
+    print(f"Key: {key} => Value: {value}")
 
 # Creating a New Dictionary using Dictionary Comprehension
 squared_dict = {x: x**2 for x in range(1, 6)}
