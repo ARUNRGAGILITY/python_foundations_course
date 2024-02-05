@@ -14,7 +14,7 @@ def greet_person(name):
     print(f"Hello, {name}!")
 
 # Calling the function with an argument
-greet_person("Alice")  # Output: Hello, Alice!
+greet_person("John")  # Output: Hello, Alice!
 
 # Function with return value
 def add_numbers(a, b):
@@ -121,6 +121,14 @@ print_msg("Hello from the inner function!")
 # - Lambda functions are small anonymous functions defined with the lambda keyword.
 # - Inner functions are functions defined inside other functions.
 
+
+def multiply_nos(n1=1, n2=1, n3=1):
+    result = n1 * n2 * n3
+    return result
+
+
+result = multiply_nos()
+print(result)
 
 '''
 Decorator functions in Python are used to modify or extend the 

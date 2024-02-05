@@ -178,6 +178,7 @@ if (length := len(data)) > 5:
 else:
     print(f"Data is of acceptable length ({length} characters).")
 
+
 # Example 3: Using walrus operator in a list comprehension
 # It allows you to use the assigned value inside the comprehension
 data_list = ["apple", "banana", "cherry", "date"]
