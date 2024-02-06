@@ -13,6 +13,74 @@ Hybrid Inheritance
 
 from abc import ABC, abstractmethod
 
+# Abstract class representing a generic shape
+class Shape(ABC):
+    def __init__(self, color):
+        # Common attribute for all shapes (encapsulation of common logic)
+        self.color = color
+
+    @abstractmethod
+    def area(self):
+        # Abstract method that must be implemented by all subclasses (enforcing a contract)
+        pass
+
+    @abstractmethod
+    def draw(self):
+        # Another abstract method for drawing the shape
+        pass
+
+    def get_color(self):
+        # Non-abstract method using the common attribute
+        return f"The color of this shape is {self.color}."
+
+# Subclass representing a circle
+class Circle(Shape):
+    def __init__(self, radius, color):
+        super().__init__(color)
+        self.radius = radius
+
+    def area(self):
+        # Implementation of abstract method area()
+        return 3.14 * self.radius * self.radius
+
+    def draw(self):
+        # Implementation of abstract method draw()
+        print(f"Drawing a {self.color} circle with radius {self.radius}")
+
+# Subclass representing a rectangle
+class Rectangle(Shape):
+    def __init__(self, length, width, color):
+        super().__init__(color)
+        self.length = length
+        self.width = width
+
+    def area(self):
+        # Implementation of abstract method area()
+        return self.length * self.width
+
+    def draw(self):
+        # Implementation of abstract method draw()
+        print(f"Drawing a {self.color} rectangle with length {self.length} and width {self.width}")
+
+# Usage
+circle = Circle(5, 'red')
+print(circle.area())    # Uses the circle's implementation of area()
+circle.draw()           # Uses the circle's implementation of draw()
+print(circle.get_color()) # Uses the common method from the abstract class
+
+rectangle = Rectangle(4, 5, 'blue')
+print(rectangle.area())  # Uses the rectangle's implementation of area()
+rectangle.draw()         # Uses the rectangle's implementation of draw()
+print(rectangle.get_color()) # Uses the common method from the abstract class
+
+
+
+# Abstraction in details
+
+
+
+from abc import ABC, abstractmethod
+
 # Abstraction:
 # The 'Vehicle' class is an abstract base class (ABC). 
 # ABCs are classes that are never instantiated on their own, but inherited by other classes.
@@ -70,6 +138,7 @@ class EncapsulatedVehicle(Vehicle):
         # The 'move' method here overrides the method from both parent classes.
         return f"{self.name} can move EC"
 # Creating objects to demonstrate polymorphism and encapsulation
+
 car = Car("Car")
 airplane = Airplane("Airplane")
 amphibious_vehicle = AmphibiousVehicle("Amphibious Vehicle")
@@ -150,24 +219,21 @@ class Calculator:
 
 # Inheritance and Method Overriding
 class Animal:
-    def speak(self):
+    def make_sound(self):
         return "Animal speaks"
 
 class Dog(Animal):
-    def speak(self):
+    def make_sound(self):
         return "Dog barks"
 
-# Duck Typing
-class Duck:
-    def quack(self):
-        return "Quack quack"
+class Lion(Animal):
+    def make_sound(self):
+        return "Lion Roars"
 
-class Person:
-    def quack(self):
-        return "Person imitating a duck"
-
-def make_it_quack(duck):
-    print(duck.quack())
+simba = Lion()
+pet1 = Dog()
+print(simba.make_sound())
+print(pet1.make_sound())
 
 # Demonstrating Operator Overloading
 calc = Calculator()
@@ -176,18 +242,6 @@ print(calc + calc)  # Output: Addition operation
 # Demonstrating Method Overloading (Python style)
 print(calc.multiply(2, 3))  # Output: 6
 print(calc.multiply(2, 3, 4))  # Output: 24
-
-# Demonstrating Method Overriding
-animal = Animal()
-dog = Dog()
-print(animal.speak())  # Output: Animal speaks
-print(dog.speak())     # Output: Dog barks
-
-# Demonstrating Duck Typing
-duck = Duck()
-person = Person()
-make_it_quack(duck)   # Output: Quack quack
-make_it_quack(person) # Output: Person imitating a duck
 
 
 # Inheritance and its types
