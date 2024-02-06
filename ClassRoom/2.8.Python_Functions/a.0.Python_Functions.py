@@ -161,3 +161,64 @@ The expression is evaluated and returned automatically.
 Lambda functions are often used in places where a simple function is 
 required for a short duration, without the need to formally define a function.
 '''
+
+# Generators
+
+'''
+Generators in Python are a simple and powerful tool for 
+creating iterators. They are written like regular functions 
+but use the yield statement whenever they want to return data. 
+Each time yield is called, the generator resumes where it left 
+off (it remembers all the data values and which statement 
+was last executed). This is a more memory-efficient way of 
+writing iterators.
+
+Generators are ideal for:
+
+Handling large data sets
+Streaming data
+Pipelining data transformations
+On-the-fly calculation
+Remember, generators are a one-time use object. 
+Once they have been iterated through, they cannot be restarted or reused. 
+For a new iteration, you need to create a new generator object.
+'''
+# Generator function to yield squares of numbers up to a given limit
+def generate_squares(limit):
+    for i in range(limit):
+        yield i * i  # Yield the square of the number
+
+# Using the generator
+for square in generate_squares(5):
+    print(square)
+
+# Another example
+# Generator to generate Fibonacci numbers
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+# Using the generator
+for fib_number in fibonacci(10):
+    print(fib_number)
+
+
+# Generator calling again for next time (after its one time usage)
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+# First iteration
+fib_gen = fibonacci(10)
+for num in fib_gen:
+    print(num)
+
+# Creating a new generator object for second iteration
+fib_gen = fibonacci(10)
+print("\nStarting second iteration:")
+for num in fib_gen:
+    print(num)
