@@ -12,6 +12,7 @@ the console or terminal or file
 print('Hello Python!')
 print("Hello Python!")
 print("""Hello Python!""")
+print('''This another String definition: Hello there!''')
 
 single_line_text = "This is a single line text"
 multi_line_text = """
