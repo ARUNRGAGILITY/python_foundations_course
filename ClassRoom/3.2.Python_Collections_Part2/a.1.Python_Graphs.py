@@ -47,6 +47,19 @@ def dijkstra(graph, initial):
 
     return visited, path
 
+def shortest_path(from_node, to_node, path):
+    """Reconstructs the shortest path from from_node to to_node based on the provided path dictionary."""
+    if to_node not in path:
+        return "Path does not exist"
+    
+    current_node = to_node
+    path_reversed = [to_node]
+    while current_node != from_node:
+        current_node = path[current_node]
+        path_reversed.append(current_node)
+
+    return path_reversed[::-1]  # Reverse the path to get it in the correct order from source to target
+
 # Example usage
 graph = Graph()
 graph.add_node("A")
@@ -67,3 +80,7 @@ graph.add_edge("E", "F", 2)
 visited, path = dijkstra(graph, 'A')  # Find shortest path from node 'A' to all other nodes
 print("Visited:", visited)
 print("Path:", path)
+
+# Find and print the shortest path from 'A' to 'E'
+shortest_path_A_to_E = shortest_path('A', 'E', path)
+print("Shortest path from A to E:", shortest_path_A_to_E)
