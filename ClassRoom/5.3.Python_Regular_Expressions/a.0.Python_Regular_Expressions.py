@@ -66,3 +66,77 @@ case_insensitive = re.search('python', 'Python', re.IGNORECASE)  # Case-insensit
 multiline = re.search('^start', 'no match\nstart here', re.MULTILINE)  # Multiline search
 print("Flag - Case Insensitive:", case_insensitive.group() if case_insensitive else 'Not found')
 print("Flag - Multiline:", multiline.group() if multiline else 'Not found')
+
+
+# Validating email address with Regular expression Pattern
+# re.match
+import re
+email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+email = "example@example.com"
+
+if re.match(email_pattern, email):
+    print("Valid email")
+else:
+    print("Invalid email")
+# output: Valid email
+
+# Extracting the date text using re.findall()
+text = "The event will take place on 12-05-2024. Another event on 15-06-2024."
+dates = re.findall(r'\d{2}-\d{2}-\d{4}', text)
+print(dates)  # Output: ['12-05-2024', '15-06-2024']
+# output: ['12-05-2024', '15-06-2024']
+
+# Splitting a string with pattern and re.split()
+text = "Hello, world! How are you doing? Good, I hope."
+words = re.split(r'[,.!?]\s*', text)
+print(words)
+# output: ['Hello', 'world', 'How are you doing', 'Good', 'I hope', '']
+
+import re
+log_entry = "Error:FileNotFound; User:JohnDoe, Date:2023-04-01 Time:14:33"
+# Pattern matches a comma, semicolon, or space
+pattern = r"[,; ]+"
+# Splitting the log entry based on the pattern
+entries = re.split(pattern, log_entry)
+print(entries)
+# output: ['Error:FileNotFound', 'User:JohnDoe', 'Date:2023-04-01', 'Time:14:33']
+
+# sensitive emails are changed, before this information is shared
+# redacting
+import re
+
+text_with_emails = "Contact us at support@example.com or feedback@example.org for more info."
+# Pattern to match email addresses
+email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+
+# Replacing email addresses with '<redacted>'
+anonymized_text = re.sub(email_pattern, '<redacted>', text_with_emails)
+print(anonymized_text)
+# Contact us at <redacted> or <redacted> for more info.
+
+
+# matching html tags
+html = "<div>Hello, world!</div><p>This is a paragraph.</p>"
+tags = re.findall(r"<(\w+)>", html)
+print(tags)  # Output: ['div', 'p']
+
+# extracting url from text
+text = "Check out https://example.com and http://example.org for more info."
+urls = re.findall(r"https?://[^\s]+", text)
+print(urls)  # Output: ['https://example.com', 'http://example.org']
+
+# finding hashtags in tweet
+tweet = "This is a #sample tweet with #hashtags."
+hashtags = re.findall(r"#(\w+)", tweet)
+print(hashtags)  # Output: ['sample', 'hashtags']
+
+# validating password length
+password = "SecurePass123"
+pattern = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+
+if re.match(pattern, password):
+    print("Password is strong.")
+else:
+    print("Password is weak.")
+
+# extracting phone numbers
