@@ -1,0 +1,11 @@
+root:
+  - element: items
+    children:
+      - element: test1
+        attributes:
+          name: test1_attribute1
+        text: This is test1 data
+      - element: test2
+        attributes:
+          name: test2_attribute2
+        text: This is test2 data
