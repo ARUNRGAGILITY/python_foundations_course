@@ -1,11 +1,9 @@
 {
-    "library": {
-      "books": [
-        {"title": "Automate the Boring Stuff with Python", "author": "Al Sweigart", "year": 2015},
-        {"title": "Python Crash Course", "author": "Eric Matthes", "year": 2015},
-        {"title": "Fluent Python", "author": "Luciano Ramalho", "year": 2015},
-        {"title": "Effective Python: 90 Specific Ways to Write Better Python", "author": "Brett Slatkin", "year": 2015},
-        {"title": "Learning Python", "author": "Mark Lutz", "year": 2013}
+    "channel": {
+      "movies": [
+        {"title": "Telugu Movie1 ", "director": "Director1", "year": 2022},
+        {"title": "Telugu Movie2 ", "director": "Director2", "year": 2022},
+   
       ]
     }
   }
