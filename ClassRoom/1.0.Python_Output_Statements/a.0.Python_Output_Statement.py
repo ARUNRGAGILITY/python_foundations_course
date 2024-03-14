@@ -158,7 +158,7 @@ print("Hello\bWorld")
 print("Hello\fWorld")
 
 # Octal value (example: \o12 represents a newline)
-print("\o12")
+print("\012")
 
 # Hex value (example: \x0a represents a newline)
 print("\x0a")
@@ -187,6 +187,28 @@ print("Day:", current_datetime.day)
 print("Hour:", current_datetime.hour)
 print("Minute:", current_datetime.minute)
 print("Second:", current_datetime.second)
+
+# Get the current date and time
+now = datetime.now()
+
+# Format the date and time
+# For example, let's format the date and time as "Year-Month-Day Hour:Minute:Second"
+formatted_date_time = now.strftime("%Y-%m-%d %H:%M:%S")
+
+print("Current Date and Time:", formatted_date_time)
+
+
+# Without using 'r' prefix, interpreting as a regular string
+regular_string = "This is a regular string with a newline \n and a tab \t see?"
+
+# With 'r' prefix, treated as a raw string
+raw_string = r"This is a raw string with a newline \n and a tab \t see?"
+
+print("Regular String Output:")
+print(regular_string)  # Here the escape sequences \n and \t will be interpreted
+
+print("\nRaw String Output:")
+print(raw_string)  # Here the escape sequences \n and \t will be printed as raw text
 
 
 
